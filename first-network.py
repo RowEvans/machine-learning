@@ -1,15 +1,16 @@
-inputs = [1, 2, 3, 2.5]
+import numpy as np
 
-weights1 = [2.1, 3.4, 5.8, -0.5]
-weights2 = [1.0, 0.3, -0.8, 0.1]
-weights3 = [0.9, -0.4, -0.6, 0.8]
+inputs = [[1.0, 2.0, 3.0, 2.5],
+          [2.0, 5.0, -1.0, 2.0],
+          [-1.5, 2.7, 3.3, 0.8]]
 
-bias1 = 2
-bias2 = 3
-bias3 = 0.5
+weights = [[0.2, 0.8, -0.5, 1.0],
+           [0.5, -0.91, 0.26, -0.5],
+           [-0.26, -0.27, 0.17, 0.87]]
 
-output = [weights1[0]*inputs[0] + weights1[1]*inputs[1] + weights1[2]*inputs[2] + bias1,
-          weights2[0]*inputs[0] + weights2[1]*inputs[1] + weights2[2]*inputs[2] + bias2,
-          weights3[0]*inputs[0] + weights3[1]*inputs[1] + weights3[2]*inputs[2] + bias3]
+biases = [2, 3, 0.5]
+
+
+output = np.dot(inputs, np.array(weights).T) + biases
 
 print(output)
